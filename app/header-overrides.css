@@ -48,8 +48,8 @@
 
 @media (max-width: 760px) {
   .brand img {
-    width: 150px;
-    height: 54px;
+    width: 180px;
+    height: 58px;
     object-fit: cover;
   }
 }

@@ -1,3 +1,7 @@
+.footer-brand {
+  justify-content: center;
+}
+
 .footer-brand > img {
   width: 390px;
   height: 80px;
@@ -119,7 +123,8 @@
 @media (max-width: 900px) {
   .footer-brand {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
   }
 
   .footer-brand > img {
@@ -130,6 +135,16 @@
 }
 
 @media (max-width: 760px) {
+  .footer-bottom {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-languages {
+    width: 100%;
+    justify-content: center;
+  }
+
   .contact-grid .contact-icon {
     width: 34px;
     height: 34px;

@@ -22,13 +22,63 @@
 
 @media (max-width: 760px) {
   .hero {
+    min-height: 740px;
+    margin-bottom: 0;
     background:
       linear-gradient(90deg, rgba(0, 0, 0, 0.76) 0%, rgba(0, 0, 0, 0.46) 42%, rgba(0, 0, 0, 0.08) 72%, transparent 100%),
-      url("/images/hero-factory.png") right bottom / auto 74% no-repeat,
-      linear-gradient(180deg, #0d2027 0%, #27434b 42%, #0b2a22 100%);
+      url("/images/hero-factory.png") right top / auto 560px no-repeat,
+      linear-gradient(180deg, #0d2027 0%, #27434b 58%, #071d18 76%, #041511 100%);
   }
 
   .hero::before {
     height: 118px;
+  }
+
+  .hero-content {
+    padding-top: 32px;
+  }
+
+  .hero .eyebrow {
+    margin-bottom: 8px;
+    font-size: 11px;
+    line-height: 1.4;
+    letter-spacing: 0.055em;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+    line-height: 1.04;
+  }
+
+  .hero-intro {
+    max-width: 420px;
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .hero-actions {
+    position: absolute;
+    z-index: 3;
+    top: 494px;
+    right: 18px;
+    bottom: auto;
+    left: 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: none;
+    margin: 0;
+  }
+
+  .hero-actions .button {
+    min-width: 0;
+    padding: 14px 10px;
+  }
+
+  .hero-stats {
+    top: 560px;
+    bottom: auto;
+    height: 180px;
   }
 }
