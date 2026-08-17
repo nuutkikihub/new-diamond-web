@@ -1,0 +1,47 @@
+ .site-header {
+  text-shadow: 0 2px 9px rgba(0, 0, 0, 0.95);
+}
+
+@media (min-width: 761px) {
+  .site-header {
+    height: 96px;
+  }
+
+  .brand {
+    gap: 24px;
+  }
+
+  .brand img {
+    width: 390px;
+    height: 80px;
+    object-fit: cover;
+  }
+
+  .brand span {
+    gap: 3px;
+  }
+
+  .brand strong {
+    font-size: 18px;
+    letter-spacing: 0.025em;
+  }
+
+  .brand small {
+    font-size: 14.5px;
+    color: rgba(255, 255, 255, 0.78);
+  }
+
+  nav {
+    gap: 22px;
+  }
+
+  nav a {
+    font-size: 13px;
+    opacity: 0.88;
+  }
+
+  .languages button {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,150 @@
+.footer-brand > img {
+  width: 390px;
+  height: 80px;
+  flex: 0 0 auto;
+  object-fit: cover;
+}
+
+.contact-grid .contact-icon {
+  width: 30px;
+  height: 30px;
+  margin-top: 14px;
+  object-fit: contain;
+}
+
+.contact-grid > div > .contact-icon:first-child {
+  margin-top: 0;
+}
+
+.contact-grid .contact-icon + p,
+.contact-grid .contact-icon + a {
+  margin-top: 2px;
+}
+
+.qr-trigger {
+  width: max-content;
+  margin-top: 14px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.contact-grid > div > .qr-trigger:first-child {
+  margin-top: 0;
+}
+
+.qr-trigger .contact-icon {
+  display: block;
+  margin: 0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.qr-trigger:hover .contact-icon,
+.qr-trigger:focus-visible .contact-icon {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 4px rgba(98, 216, 154, 0.24);
+  border-radius: 50%;
+}
+
+.qr-trigger:focus-visible {
+  outline: none;
+}
+
+.qr-modal {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  padding: 24px;
+  display: grid;
+  place-items: center;
+  background: rgba(1, 18, 14, 0.78);
+  backdrop-filter: blur(8px);
+}
+
+.qr-modal-card {
+  position: relative;
+  width: min(100%, 520px);
+  padding: 34px;
+  color: var(--navy);
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
+}
+
+.qr-modal-card h2 {
+  margin: 0 44px 22px 0;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+}
+
+.qr-modal-card > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.qr-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  color: var(--navy);
+  background: #eef4f0;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.qr-close:hover,
+.qr-close:focus-visible {
+  color: #fff;
+  background: var(--green);
+  outline: none;
+}
+
+@media (max-width: 1150px) {
+  .footer-brand > img {
+    width: 330px;
+    height: 68px;
+  }
+}
+
+@media (max-width: 900px) {
+  .footer-brand {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-brand > img {
+    width: min(100%, 390px);
+    height: auto;
+    aspect-ratio: 39 / 8;
+  }
+}
+
+@media (max-width: 760px) {
+  .contact-grid .contact-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .qr-modal {
+    padding: 16px;
+  }
+
+  .qr-modal-card {
+    padding: 28px 20px 20px;
+    border-radius: 18px;
+  }
+
+  .qr-modal-card h2 {
+    font-size: 23px;
+  }
+}

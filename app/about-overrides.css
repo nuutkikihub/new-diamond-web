@@ -1,0 +1,47 @@
+.about-grid {
+  grid-template-columns: 1fr;
+  gap: 58px;
+}
+
+.about-grid .section-copy {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+}
+
+.about-visual {
+  width: min(100%, 1300px);
+  margin: 0 auto;
+  min-height: 0;
+}
+
+.about-visual > img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  border-radius: 24px;
+}
+
+.experience-seal {
+  left: -30px;
+  bottom: -26px;
+}
+
+@media (max-width: 1100px) {
+  .about-visual {
+    width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .about-visual,
+  .about-visual > img {
+    min-height: 0;
+    height: auto;
+  }
+
+  .experience-seal {
+    left: 12px;
+    bottom: -18px;
+  }
+}
