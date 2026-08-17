@@ -5,6 +5,7 @@ import "./hero-overrides.css";
 import "./about-overrides.css";
 import "./video-overrides.css";
 import "./gallery-overrides.css";
+import "./product-overrides.css";
 import "./quality-overrides.css";
 import "./contact-overrides.css";
 
