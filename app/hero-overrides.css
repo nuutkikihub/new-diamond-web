@@ -19,3 +19,16 @@
 .hero-content {
   text-shadow: 0 3px 14px rgba(0, 0, 0, 0.86);
 }
+
+@media (max-width: 760px) {
+  .hero {
+    background:
+      linear-gradient(90deg, rgba(0, 0, 0, 0.76) 0%, rgba(0, 0, 0, 0.46) 42%, rgba(0, 0, 0, 0.08) 72%, transparent 100%),
+      url("/images/hero-factory.png") right bottom / auto 74% no-repeat,
+      linear-gradient(180deg, #0d2027 0%, #27434b 42%, #0b2a22 100%);
+  }
+
+  .hero::before {
+    height: 118px;
+  }
+}

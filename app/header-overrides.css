@@ -45,3 +45,11 @@
     font-size: 12px;
   }
 }
+
+@media (max-width: 760px) {
+  .brand img {
+    width: 150px;
+    height: 54px;
+    object-fit: cover;
+  }
+}
