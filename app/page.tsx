@@ -43,7 +43,7 @@ const translations = {
   },
 };
 
-const galleryImages = ["p8.png", "p1.png", "p2.png", "p3.png", "p4.png", "p6.png", "p5.png", "p7.png"];
+const galleryImages = ["p8.jpg", "p1.jpg", "p2.jpg", "p3.jpg", "p4.jpg", "p6.jpg", "p5.jpg", "p7.jpg"];
 const productImages = ["bag-25.jpg", "bag-500.jpg", "bag-850.jpg"];
 const productSizes = ["25 / 50", "500", "850"];
 
@@ -52,13 +52,16 @@ export function NewDiamondHome({ initialLanguage = "th" }: { initialLanguage?: L
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
   const [featuredVideoId, setFeaturedVideoId] = useState("e6EJ75hb8Cc");
-  const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
+  const [activeGalleryIndex, setActiveGalleryIndex] = useState<number | null>(null);
   const [activeQr, setActiveQr] = useState<{ image: string; label: string } | null>(null);
   useEffect(() => {
-    if (!activeQr) return;
+    if (!activeQr && activeGalleryIndex === null) return;
     const previousOverflow = document.body.style.overflow;
     const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setActiveQr(null);
+      if (event.key === "Escape") {
+        setActiveQr(null);
+        setActiveGalleryIndex(null);
+      }
     };
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", closeOnEscape);
@@ -66,7 +69,7 @@ export function NewDiamondHome({ initialLanguage = "th" }: { initialLanguage?: L
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", closeOnEscape);
     };
-  }, [activeQr]);
+  }, [activeQr, activeGalleryIndex]);
   const text = translations[language];
   const anchors = ["home", "about", "products", "factory", "quality", "careers", "contact"];
   const videoItems = [
@@ -87,7 +90,7 @@ export function NewDiamondHome({ initialLanguage = "th" }: { initialLanguage?: L
   return <main>
     <section className="hero" id="home">
       <header className="site-header">
-        <a className="brand" href="#home" aria-label="New Diamond Starch"><img src="/images/logo.png" alt="New Diamond Starch" /><span><strong>NEW DIAMOND STARCH CO., LTD.</strong><small>新钻石淀粉有限公司</small></span></a>
+        <a className="brand" href="#home" aria-label="New Diamond Starch"><img src="/images/logo2.png" alt="New Diamond Starch" /><span><strong>NEW DIAMOND STARCH CO., LTD.</strong><small>新钻石淀粉有限公司</small></span></a>
         <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-label="Menu"><span/><span/><span/></button>
         <nav className={menuOpen ? "open" : ""} aria-label="Main navigation">{text.nav.map((item,index)=><a key={item} href={`#${anchors[index]}`} onClick={()=>setMenuOpen(false)}>{item}</a>)}</nav>
         <div className="languages" aria-label="Language selector">{(["th","en","zh"] as Language[]).map(code=><button key={code} className={language===code?"active":""} onClick={()=>changeLanguage(code)} aria-pressed={language===code}>{code==="th"?"TH":code==="en"?"EN":"中文"}</button>)}</div>
@@ -96,7 +99,7 @@ export function NewDiamondHome({ initialLanguage = "th" }: { initialLanguage?: L
       <div className="hero-stats" aria-label="Company highlights">{text.stats.map(([value,label])=><article key={label}><strong>{value}</strong><span>{label}</span></article>)}</div>
     </section>
 
-    <section className="section about" id="about"><div className="section-grid about-grid"><div className="section-copy">{text.aboutLabel && <p className="section-label">{text.aboutLabel}</p>}<h2>{text.aboutTitle}</h2><p className="lead">{text.aboutP1}</p><p>{text.aboutP2}</p><p>{text.aboutP3}</p></div><div className="about-visual"><img src="/images/about-company.png" alt={text.factoryTitle}/><div className="experience-seal"><strong>50</strong><span>{text.stats[0][1]}</span></div></div></div></section>
+    <section className="section about" id="about"><div className="section-grid about-grid"><div className="section-copy">{text.aboutLabel && <p className="section-label">{text.aboutLabel}</p>}<h2>{text.aboutTitle}</h2><p className="lead">{text.aboutP1}</p><p>{text.aboutP2}</p><p>{text.aboutP3}</p></div><div className="about-visual"><img src="/images/about-company.jpg" alt={text.factoryTitle}/><div className="experience-seal"><strong>50</strong><span>{text.stats[0][1]}</span></div></div></div></section>
 
     <section className="section videos-section" aria-labelledby="videos-title">
       <div className="section-heading center videos-heading"><div className="videos-heading-copy">{text.videosLabel && <p className="section-label">{text.videosLabel}</p>}<h2 id="videos-title">{text.videosTitle}</h2></div><img className="videos-mascot" src="/images/mascot-02.png" alt="New Diamond Starch mascot" /></div>
@@ -110,15 +113,16 @@ export function NewDiamondHome({ initialLanguage = "th" }: { initialLanguage?: L
       </div>
     </section>
 
-    <section className="section factory-section" id="factory"><div className="section-heading center"><h2>{text.factoryTitle}</h2></div><div className="interactive-gallery"><figure className="gallery-main"><img src={`/images/gallery-new/${galleryImages[activeGalleryIndex]}`} alt={text.gallery[activeGalleryIndex]}/><figcaption><span>{String(activeGalleryIndex+1).padStart(2,"0")}</span>{text.gallery[activeGalleryIndex]}</figcaption></figure><div className="gallery-thumbnails" aria-label={text.factoryTitle}>{galleryImages.map((image,index)=><button type="button" key={image} className={index===activeGalleryIndex?"active":""} onClick={()=>setActiveGalleryIndex(index)} aria-pressed={index===activeGalleryIndex} aria-label={`${String(index+1).padStart(2,"0")} ${text.gallery[index]}`}><img src={`/images/gallery-new/${image}`} alt=""/><span><strong>{String(index+1).padStart(2,"0")}</strong>{text.gallery[index]}</span></button>)}</div></div></section>
+    <section className="section factory-section" id="factory"><div className="section-heading center"><h2>{text.factoryTitle}</h2></div><div className="interactive-gallery"><div className="gallery-thumbnails" aria-label={text.factoryTitle}>{galleryImages.map((image,index)=><button type="button" key={image} onClick={()=>setActiveGalleryIndex(index)} aria-label={text.gallery[index]}><img src={`/images/gallery-new/${image}`} alt=""/><span>{text.gallery[index]}</span></button>)}</div></div></section>
 
     <section className="section products-section" id="products"><div className="section-heading center"><h2>{text.productsTitle}</h2><p>{text.productsIntro}</p></div><div className="product-grid">{productImages.map((image,index)=><article className="product-card" key={image}><div className="product-image"><img src={`/images/${image}`} alt={`${productSizes[index]} kg`}/></div><div className="product-info"><h3>{productSizes[index]} <small>kg</small></h3><ul>{text.grades.map(grade=><li key={grade}>{grade}</li>)}</ul></div></article>)}</div></section>
 
-    <section className="quality-section" id="quality"><div className="quality-copy">{text.qualityLabel && <p className="section-label light">{text.qualityLabel}</p>}<h2>{text.qualityTitle}</h2><p>{text.qualityBody}</p><img className="certificates" src="/images/certificates.png" alt={text.qualityTitle}/></div><div className="export-visual"><img src="/images/ship.png" alt={text.qualityBody}/></div></section>
+    <section className="quality-section" id="quality"><div className="quality-copy">{text.qualityLabel && <p className="section-label light">{text.qualityLabel}</p>}<h2>{text.qualityTitle}</h2><p>{text.qualityBody}</p><img className="certificates" src="/images/certificates.png" alt={text.qualityTitle}/></div><div className="export-visual"><img src="/images/ship.jpg" alt={text.qualityBody}/></div></section>
 
     <section className="section careers-section" id="careers"><div className="section-heading"><p className="section-label">{text.careerLabel}</p><h2>{text.careerTitle}</h2></div><div className="jobs-grid">{text.jobs.map(([title,count,detail],index)=><article className="job-card" key={title}><span className="job-number">{String(index+1).padStart(2,"0")}</span><h3>{title}</h3><strong>{count}</strong><p>{detail}</p></article>)}</div></section>
 
-    <footer id="contact"><div className="footer-main"><div className="footer-brand"><img src="/images/logo.png" alt="New Diamond Starch"/><div><p className="section-label light">{text.contactLabel}</p><h2>{text.contactTitle}</h2></div></div><div className="contact-grid"><div><img className="contact-icon" src="/images/contact-icons/location.png" alt={text.addressLabel} title={text.addressLabel}/><p>{text.address}</p><a className="map-link" href="https://maps.google.com/?q=99+moo+8+Khlongkhlung+Kamphaengpet+62120" target="_blank" rel="noreferrer">{text.map} ↗</a></div><div><img className="contact-icon" src="/images/contact-icons/phone.png" alt={text.phoneLabel} title={text.phoneLabel}/><a href="tel:+6655741623">+66 55 741 623</a><small>{text.mobileLabel}</small><a href="tel:+66954492564">+66 95 449 2564</a><small>{text.faxLabel}</small><p>+66 55 741 624</p></div><div><img className="contact-icon" src="/images/contact-icons/mail.png" alt={text.emailLabel} title={text.emailLabel}/><a href="mailto:new_diamond_starch@hotmail.com">new_diamond_starch@hotmail.com</a><img className="contact-icon" src="/images/contact-icons/fb.png" alt="Facebook" title="Facebook"/><a href="https://www.facebook.com/newdiamondstarch/" target="_blank" rel="noreferrer">New Diamond Starch</a></div><div><button className="qr-trigger" type="button" onClick={()=>setActiveQr({image:"wechat.jpg",label:"WeChat"})} aria-label="Show WeChat QR code"><img className="contact-icon" src="/images/contact-icons/wchat.png" alt=""/></button><p>Bom6644</p><button className="qr-trigger" type="button" onClick={()=>setActiveQr({image:"line.jpg",label:"LINE"})} aria-label="Show LINE QR code"><img className="contact-icon" src="/images/contact-icons/line.png" alt=""/></button><p>uaychai88</p><button className="qr-trigger" type="button" onClick={()=>setActiveQr({image:"whatsapp.jpg",label:"WhatsApp"})} aria-label="Show WhatsApp QR code"><img className="contact-icon" src="/images/contact-icons/wapp.png" alt=""/></button><p>Bomss6644</p></div></div></div><div className="footer-bottom"><span>{text.rights}</span><div className="footer-languages"><button onClick={()=>changeLanguage("en")}>ENGLISH</button><button onClick={()=>changeLanguage("th")}>ไทย</button><button onClick={()=>changeLanguage("zh")}>中文 (中国)</button></div></div></footer>
+    <footer id="contact"><div className="footer-main"><div className="footer-brand"><img src="/images/logo2.png" alt="New Diamond Starch"/><p className="section-label light">{text.contactLabel}</p></div><div className="contact-grid"><div><img className="contact-icon" src="/images/contact-icons/location.png" alt={text.addressLabel} title={text.addressLabel}/><p>{text.address}</p><a className="map-link" href="https://maps.google.com/?q=99+moo+8+Khlongkhlung+Kamphaengpet+62120" target="_blank" rel="noreferrer">{text.map} ↗</a></div><div><img className="contact-icon" src="/images/contact-icons/phone.png" alt={text.phoneLabel} title={text.phoneLabel}/><a href="tel:+6655741623">+66 55 741 623</a><small>{text.mobileLabel}</small><a href="tel:+66954492564">+66 95 449 2564</a><small>{text.faxLabel}</small><p>+66 55 741 624</p></div><div><img className="contact-icon" src="/images/contact-icons/mail.png" alt={text.emailLabel} title={text.emailLabel}/><a href="mailto:new_diamond_starch@hotmail.com">new_diamond_starch@hotmail.com</a><img className="contact-icon" src="/images/contact-icons/fb.png" alt="Facebook" title="Facebook"/><a href="https://www.facebook.com/newdiamondstarch/" target="_blank" rel="noreferrer">New Diamond Starch</a></div><div><button className="qr-trigger" type="button" onClick={()=>setActiveQr({image:"wechat.jpg",label:"WeChat"})} aria-label="Show WeChat QR code"><img className="contact-icon" src="/images/contact-icons/wchat.png" alt=""/></button><p>Bom6644</p><button className="qr-trigger" type="button" onClick={()=>setActiveQr({image:"line.jpg",label:"LINE"})} aria-label="Show LINE QR code"><img className="contact-icon" src="/images/contact-icons/line.png" alt=""/></button><p>uaychai88</p><button className="qr-trigger" type="button" onClick={()=>setActiveQr({image:"whatsapp.jpg",label:"WhatsApp"})} aria-label="Show WhatsApp QR code"><img className="contact-icon" src="/images/contact-icons/wapp.png" alt=""/></button><p>Bomss6644</p></div></div></div><div className="footer-bottom"><span>{text.rights}</span><div className="footer-languages"><button onClick={()=>changeLanguage("en")}>ENGLISH</button><button onClick={()=>changeLanguage("th")}>ไทย</button><button onClick={()=>changeLanguage("zh")}>中文 (中国)</button></div></div></footer>
+    {activeGalleryIndex !== null && <div className="gallery-modal" role="dialog" aria-modal="true" aria-labelledby="gallery-modal-title" onMouseDown={()=>setActiveGalleryIndex(null)}><figure className="gallery-modal-card" onMouseDown={(event)=>event.stopPropagation()}><button className="gallery-modal-close" type="button" onClick={()=>setActiveGalleryIndex(null)} aria-label="Close gallery image">×</button><img src={`/images/gallery-new/${galleryImages[activeGalleryIndex]}`} alt={text.gallery[activeGalleryIndex]}/><figcaption id="gallery-modal-title">{text.gallery[activeGalleryIndex]}</figcaption></figure></div>}
     {activeQr && <div className="qr-modal" role="dialog" aria-modal="true" aria-labelledby="qr-modal-title" onMouseDown={()=>setActiveQr(null)}><div className="qr-modal-card" onMouseDown={(event)=>event.stopPropagation()}><button className="qr-close" type="button" onClick={()=>setActiveQr(null)} aria-label="Close QR code">×</button><h2 id="qr-modal-title">{activeQr.label} QR Code</h2><img src={`/images/contact-qr/${activeQr.image}`} alt={`${activeQr.label} QR Code`}/></div></div>}
   </main>;
 }

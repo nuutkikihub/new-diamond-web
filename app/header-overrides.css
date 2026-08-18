@@ -12,9 +12,9 @@
   }
 
   .brand img {
-    width: 390px;
-    height: 80px;
-    object-fit: cover;
+    width: 150px;
+    height: 78px;
+    object-fit: contain;
   }
 
   .brand span {
@@ -48,8 +48,8 @@
 
 @media (max-width: 760px) {
   .brand img {
-    width: 180px;
+    width: 112px;
     height: 58px;
-    object-fit: cover;
+    object-fit: contain;
   }
 }

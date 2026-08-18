@@ -1,7 +1,7 @@
 .hero {
   background:
     linear-gradient(90deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.56) 28%, rgba(0, 0, 0, 0.18) 46%, transparent 58%),
-    url("/images/hero-factory.png") center / cover no-repeat;
+    url("/images/hero-factory.jpg") center / cover no-repeat;
 }
 
 .hero::before {
@@ -26,7 +26,7 @@
     margin-bottom: 0;
     background:
       linear-gradient(90deg, rgba(0, 0, 0, 0.76) 0%, rgba(0, 0, 0, 0.46) 42%, rgba(0, 0, 0, 0.08) 72%, transparent 100%),
-      url("/images/hero-factory.png") right top / auto 560px no-repeat,
+      url("/images/hero-factory.jpg") right top / auto 560px no-repeat,
       linear-gradient(180deg, #0d2027 0%, #27434b 58%, #071d18 76%, #041511 100%);
   }
 

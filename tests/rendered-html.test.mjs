@@ -33,8 +33,8 @@ test("renders the New Diamond Starch Thai homepage", async () => {
   assert.match(html, /แป้งมันสำปะหลัง/);
   assert.match(html, /150,000/);
   assert.match(html, /ส่งออกกว่า 14 ประเทศทั่วโลก/);
-  assert.match(html, /\/images\/about-company\.png/);
-  assert.match(html, /\/images\/ship\.png/);
+  assert.match(html, /\/images\/about-company\.jpg/);
+  assert.match(html, /\/images\/ship\.jpg/);
   assert.match(html, /Show WeChat QR code/);
   assert.doesNotMatch(html, /codex-preview|Building your site/i);
 });
@@ -56,7 +56,9 @@ test("renders all three language routes", async () => {
 test("includes the interactive gallery and QR code assets", async () => {
   const page = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
   assert.match(page, /setActiveGalleryIndex/);
-  assert.match(page, /aria-pressed=\{index===activeGalleryIndex\}/);
+  assert.match(page, /onClick=\{\(\)=>setActiveGalleryIndex\(index\)\}/);
+  assert.match(page, /activeGalleryIndex !== null/);
+  assert.match(page, /className="gallery-modal"/);
   assert.match(page, /role="dialog"/);
   assert.match(page, /event\.key === "Escape"/);
 

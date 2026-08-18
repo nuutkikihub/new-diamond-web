@@ -16,13 +16,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "New Diamond Starch Co., Ltd.",
     description: "International Standard Tapioca Starch — 50+ Years Experience",
-    images: [{ url: "/og.png", width: 1740, height: 904 }],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "New Diamond Starch Co., Ltd.",
     description: "International Standard Tapioca Starch — 50+ Years Experience",
-    images: ["/og.png"],
   },
 };
 
