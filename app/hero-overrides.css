@@ -1,7 +1,5 @@
 .hero {
-  background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.56) 28%, rgba(0, 0, 0, 0.18) 46%, transparent 58%),
-    url("/images/hero-factory.jpg") center / cover no-repeat;
+  background: url("/images/hero-bg.jpg") center / cover no-repeat;
 }
 
 .hero::before {
@@ -20,14 +18,22 @@
   text-shadow: 0 3px 14px rgba(0, 0, 0, 0.86);
 }
 
+.hero-copy-panel {
+  width: min(540px, 100%);
+  padding: 18px 20px 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+}
+
 @media (max-width: 760px) {
   .hero {
-    min-height: 740px;
+    min-height: 755px;
     margin-bottom: 0;
     background:
-      linear-gradient(90deg, rgba(0, 0, 0, 0.76) 0%, rgba(0, 0, 0, 0.46) 42%, rgba(0, 0, 0, 0.08) 72%, transparent 100%),
-      url("/images/hero-factory.jpg") right top / auto 560px no-repeat,
-      linear-gradient(180deg, #0d2027 0%, #27434b 58%, #071d18 76%, #041511 100%);
+      url("/images/hero-bg.jpg") right top / auto 560px no-repeat,
+      #edf3ef;
   }
 
   .hero::before {
@@ -35,26 +41,32 @@
   }
 
   .hero-content {
-    padding-top: 32px;
+    padding-top: 10px;
+  }
+
+  .hero-copy-panel {
+    padding: 10px 12px 12px;
+    background: rgba(0, 0, 0, 0.52);
+    border-radius: 10px;
   }
 
   .hero .eyebrow {
-    margin-bottom: 8px;
-    font-size: 11px;
+    margin-bottom: 6px;
+    font-size: 10px;
     line-height: 1.4;
     letter-spacing: 0.055em;
   }
 
   .hero h1 {
-    font-size: 34px;
+    font-size: 29px;
     line-height: 1.04;
   }
 
   .hero-intro {
     max-width: 420px;
-    margin-top: 20px;
-    font-size: 14px;
-    line-height: 1.55;
+    margin-top: 12px;
+    font-size: 12.5px;
+    line-height: 1.45;
   }
 
   .hero-actions {
@@ -77,7 +89,7 @@
   }
 
   .hero-stats {
-    top: 560px;
+    top: 575px;
     bottom: auto;
     height: 180px;
   }

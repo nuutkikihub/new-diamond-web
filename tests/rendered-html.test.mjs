@@ -33,6 +33,8 @@ test("renders the New Diamond Starch Thai homepage", async () => {
   assert.match(html, /แป้งมันสำปะหลัง/);
   assert.match(html, /150,000/);
   assert.match(html, /ส่งออกกว่า 14 ประเทศทั่วโลก/);
+  assert.match(html, /บริษัท หวังดี เอ็นเนอยี จำกัด/);
+  assert.match(html, /Waste to Energy/);
   assert.match(html, /\/images\/about-company\.jpg/);
   assert.match(html, /\/images\/ship\.jpg/);
   assert.match(html, /Show WeChat QR code/);
@@ -61,10 +63,16 @@ test("includes the interactive gallery and QR code assets", async () => {
   assert.match(page, /className="gallery-modal"/);
   assert.match(page, /role="dialog"/);
   assert.match(page, /event\.key === "Escape"/);
+  assert.match(page, /setActiveWangDeeIndex/);
+  assert.match(page, /wangDeeImages\.map/);
 
   await Promise.all([
     "wechat.jpg",
     "line.jpg",
     "whatsapp.jpg",
   ].map((name) => access(new URL(`../public/images/contact-qr/${name}`, import.meta.url))));
+
+  await Promise.all(Array.from({ length: 11 }, (_, index) =>
+    access(new URL(`../public/images/wang-dee/wang-dee-${String(index + 1).padStart(2, "0")}.jpg`, import.meta.url)),
+  ));
 });
