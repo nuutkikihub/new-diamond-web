@@ -16,10 +16,12 @@
 }
 
 .footer-brand > img {
-  width: 220px;
-  height: 114px;
+  display: block;
+  width: 234px;
+  height: auto;
   flex: 0 0 auto;
   object-fit: contain;
+  object-position: center top;
 }
 
 .contact-grid .contact-icon {
@@ -128,8 +130,8 @@
 
 @media (max-width: 1150px) {
   .footer-brand > img {
-    width: 200px;
-    height: 104px;
+    width: 221px;
+    height: auto;
   }
 }
 
@@ -141,9 +143,8 @@
   }
 
   .footer-brand > img {
-    width: min(100%, 220px);
+    width: min(100%, 203px);
     height: auto;
-    aspect-ratio: 25 / 13;
   }
 }
 

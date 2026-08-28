@@ -1,5 +1,6 @@
  .site-header {
   text-shadow: 0 2px 9px rgba(0, 0, 0, 0.95);
+  overflow: visible;
 }
 
 @media (min-width: 761px) {
@@ -8,16 +9,25 @@
   }
 
   .brand {
-    gap: 24px;
+    align-self: stretch;
+    align-items: flex-start;
+    gap: 20px;
   }
 
   .brand img {
-    width: 150px;
-    height: 78px;
+    display: block;
+    width: 174px;
+    height: 144px;
+    max-width: none;
+    flex: 0 0 auto;
     object-fit: contain;
+    object-position: center top;
+    position: relative;
+    z-index: 6;
   }
 
   .brand span {
+    align-self: center;
     gap: 3px;
   }
 
@@ -47,9 +57,20 @@
 }
 
 @media (max-width: 760px) {
+  .brand {
+    align-self: stretch;
+    align-items: flex-start;
+  }
+
   .brand img {
-    width: 112px;
-    height: 58px;
+    display: block;
+    width: 94px;
+    height: 78px;
+    max-width: none;
+    flex: 0 0 auto;
     object-fit: contain;
+    object-position: center top;
+    position: relative;
+    z-index: 6;
   }
 }
