@@ -9,6 +9,7 @@ import "./product-overrides.css";
 import "./quality-overrides.css";
 import "./wang-dee-overrides.css";
 import "./contact-overrides.css";
+import "./activities-overrides.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://newdiamondstarch.com"),

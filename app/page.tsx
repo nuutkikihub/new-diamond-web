@@ -6,7 +6,7 @@ type Language = "th" | "en" | "zh";
 
 const translations = {
   th: {
-    name: "บริษัท นิวไดมอนด์ สตาร์ช จำกัด", nav: ["หน้าแรก", "ประวัติ", "สินค้า", "โรงงาน", "คุณภาพ", "บริษัทลูก", "ร่วมงาน", "ติดต่อ"],
+    name: "บริษัท นิวไดมอนด์ สตาร์ช จำกัด", nav: ["หน้าแรก", "ประวัติ", "สินค้า", "โรงงาน", "คุณภาพ", "บริษัทลูก", "กิจกรรม", "ร่วมงาน", "ติดต่อ"],
     heroEyebrow: "ผู้ผลิตแป้งมันสำปะหลังชั้นแนวหน้าของประเทศไทย", heroTitle: "แป้งมันสำปะหลัง\nมาตรฐานสากล", heroIntro: "เราเป็นโรงงานผู้ผลิตแป้งมันสำปะหลังที่มีคุณภาพได้มาตรฐานสากล ด้วยประสบการณ์ในแวดวงอุตสาหกรรมเกษตรมากกว่า 50 ปี", aboutButton: "รู้จักเรา", productButton: "ดูสินค้า",
     stats: [["50+", "ปีแห่งประสบการณ์"], ["2011", "ปีที่ก่อตั้งบริษัท"], ["150,000", "กำลังการผลิต (ตันต่อปี)"], ["TH · GLOBAL", "ตลาดในและต่างประเทศ"]],
     aboutLabel: "", aboutTitle: "ประสบการณ์ที่ส่งต่อเป็นคุณภาพ", aboutP1: "บริษัท นิวไดมอนด์ สตาร์ช จำกัด", aboutP2: "เราเป็นโรงงานผู้ผลิตแป้งมันสำปะหลัง ที่มีคุณภาพได้มาตรฐานสากล ชั้นแนวหน้าของประเทศไทย ด้วยประสบการณ์ในแวดวงอุตสาหกรรมเกษตรมากว่า 50 ปี", aboutP3: "บริษัท นิวไดมอนด์ สตาร์ช จำกัด ก่อตั้งขึ้นในปี พ.ศ.2554 และเริ่มผลิตสินค้าคุณภาพส่งมอบให้ลูกค้าทั้งในและต่างประเทศ ด้วยวิสัยทัศน์และนโยบายที่ “มุ่งมั่นผลิตสินค้าที่มีคุณภาพได้มาตรฐานตามความต้องการของลูกค้า และสร้างความพึงพอใจสูงสุดในด้านคุณภาพและบริการ” ทำให้ได้รับความเชื่อมั่นและไว้วางใจจากลูกค้าเรื่อยมาจนถึงปัจจุบัน",
@@ -19,7 +19,7 @@ const translations = {
     contactLabel: "ติดต่อเรา", contactTitle: "บริษัท นิวไดมอนด์ สตาร์ช จำกัด", addressLabel: "ที่อยู่", address: "เลขที่ 99 หมู่ 8 ต.คลองขลุง อ.คลองขลุง จ.กำแพงเพชร ไปรษณีย์ 62120", phoneLabel: "โทร", mobileLabel: "มือถือ", faxLabel: "แฟกซ์", emailLabel: "อีเมล", map: "ดูแผนที่", rights: "© 2023 บริษัท นิวไดมอนด์ สตาร์ช จำกัด",
   },
   en: {
-    name: "NEW DIAMOND STARCH CO., LTD.", nav: ["Home", "Profile", "Products", "Factory", "Quality", "Subsidiary", "Careers", "Contact"],
+    name: "NEW DIAMOND STARCH CO., LTD.", nav: ["Home", "Profile", "Products", "Factory", "Quality", "Subsidiary", "Activities", "Careers", "Contact"],
     heroEyebrow: "THAILAND'S LEADING TAPIOCA STARCH FACTORY", heroTitle: "INTERNATIONAL STANDARD\nTAPIOCA STARCH", heroIntro: "We produce cassava starch (tapioca starch) with international standards and 50 years of experience in the tapioca starch industry.", aboutButton: "Our profile", productButton: "Products",
     stats: [["50+", "Years experience"], ["2011", "Factory established"], ["150,000", "Production capacity (tons/year)"], ["TH · GLOBAL", "Domestic & international"]],
     aboutLabel: "PROFILE", aboutTitle: "New Diamond Starch Co., Ltd.", aboutP1: "Located at 99 moo 8 Khlongkhlung, Khlongkhlung, Khamphaengpet 62120, Thailand.", aboutP2: "We produce the cassava starch (tapioca starch) with the international standard. We are the leading of Thailand’s tapioca starch factory with the high experience about the tapioca starch for 50 years.", aboutP3: "New Diamond starch Co.,Ltd. factory established in 2011. We provide the tapioca starch both domestic market and international market. Our vision are to make the high quality tapioca starch and the best service to reach the satisfaction for our customer. This is the reason why our customer confident in our company until present.",
@@ -32,7 +32,7 @@ const translations = {
     contactLabel: "CONTACT", contactTitle: "NEW DIAMOND STARCH CO., LTD.", addressLabel: "Address", address: "99 moo 8 Khlongkhlung, Khlongkhlung, Khamphaengpet 62120, Thailand.", phoneLabel: "Tel.", mobileLabel: "Mobile", faxLabel: "Fax", emailLabel: "Email", map: "View on map", rights: "© 2023 New Diamond Starch Co.,Ltd. All Right Reserved.",
   },
   zh: {
-    name: "新钻石淀粉有限公司", nav: ["首页", "公司介绍", "产品", "工厂", "质量", "子公司", "招聘", "联系"],
+    name: "新钻石淀粉有限公司", nav: ["首页", "公司介绍", "产品", "工厂", "质量", "子公司", "公益活动", "招聘", "联系"],
     heroEyebrow: "泰国领先的木薯淀粉生产商", heroTitle: "符合国际标准的\n木薯淀粉", heroIntro: "我们生产木薯淀粉达到泰国际标准，已经有了50年生产木薯淀粉的经验。", aboutButton: "公司介绍", productButton: "我们的产品",
     stats: [["50+", "年生产经验"], ["2011", "公司成立"], ["150,000", "产能（吨/年）"], ["TH · GLOBAL", "国内及国际市场"]],
     aboutLabel: "公司介绍书", aboutTitle: "新钻石淀粉有限公司", aboutP1: "地址 : 99 Moo 8 Khlongkhlung, Khlongkhlung, Kamphaengpet 62120, Thailand.", aboutP2: "我们生产木薯淀粉达到泰国际标准。我们是木薯淀粉界的先锋 ， 我们已经有了50 年生产木薯淀粉的经验。", aboutP3: "新钻石淀粉有限公司, 成立于 2011 年。我们供应的木薯有销售国内市场及销售国际市场。我们的愿望是打造高质量的木薯淀粉及给予最好的服务，以得到客户的满意。这就是我们客户为什么对我们公司一直以来都有信心的原因。",
@@ -77,7 +77,7 @@ export function NewDiamondHome({ initialLanguage = "th" }: { initialLanguage?: L
     };
   }, [activeQr, activeGalleryIndex, activeWangDeeIndex]);
   const text = translations[language];
-  const anchors = ["home", "about", "products", "factory", "quality", "wang-dee", "careers", "contact"];
+  const anchors = ["home", "about", "products", "factory", "quality", "wang-dee", "activities", "careers", "contact"];
   const videoItems = [
     { id: "e6EJ75hb8Cc", title: "New Diamond Starch: The White Awakening", label: text.videoLong, duration: "10:08", image: "video-white-awakening.jpg" },
     { id: "-l6T1fynSOc", title: "NEW DIAMOND STARCH", label: text.videoShort, duration: "2:27", image: "video-company.jpg" },
@@ -98,7 +98,7 @@ export function NewDiamondHome({ initialLanguage = "th" }: { initialLanguage?: L
       <header className="site-header">
         <a className="brand" href="#home" aria-label="New Diamond Starch"><img src="/images/logo3.png" alt="New Diamond Starch" /><span><strong>NEW DIAMOND STARCH CO., LTD.</strong><small>新钻石淀粉有限公司</small></span></a>
         <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-label="Menu"><span/><span/><span/></button>
-        <nav className={menuOpen ? "open" : ""} aria-label="Main navigation">{text.nav.map((item,index)=><a key={item} href={`#${anchors[index]}`} onClick={()=>setMenuOpen(false)}>{item}</a>)}</nav>
+        <nav className={menuOpen ? "open" : ""} aria-label="Main navigation">{text.nav.map((item,index)=>anchors[index] === "activities" ? <a key={item} href="/activities" target="_blank" rel="noreferrer" onClick={()=>setMenuOpen(false)}>{item}<span className="new-tab-mark" aria-hidden="true">↗</span></a> : <a key={item} href={`#${anchors[index]}`} onClick={()=>setMenuOpen(false)}>{item}</a>)}</nav>
         <div className="languages" aria-label="Language selector">{(["th","en","zh"] as Language[]).map(code=><button key={code} className={language===code?"active":""} onClick={()=>changeLanguage(code)} aria-pressed={language===code}>{code==="th"?"TH":code==="en"?"EN":"中文"}</button>)}</div>
       </header>
       <div className="hero-content"><div className="hero-copy-panel"><p className="eyebrow">{text.heroEyebrow}</p><h1>{text.heroTitle}</h1><p className="hero-intro">{text.heroIntro}</p><div className="hero-actions"><a className="button primary" href="#about">{text.aboutButton}</a><a className="button secondary" href="#products">{text.productButton}</a></div></div></div>
