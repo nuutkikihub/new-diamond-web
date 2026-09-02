@@ -1,5 +1,5 @@
 .hero {
-  background: url("/images/bg-04-cassava-yard.png") center / cover no-repeat;
+  background: url("/images/bg-04-cassava-yard-wide.png") center / cover no-repeat;
 }
 
 .hero::before {
@@ -32,7 +32,7 @@
     min-height: 755px;
     margin-bottom: 0;
     background:
-      url("/images/bg-04-cassava-yard.png") center top / auto 560px no-repeat,
+      url("/images/bg-04-cassava-yard-wide.png") center top / auto 560px no-repeat,
       #edf3ef;
   }
 
