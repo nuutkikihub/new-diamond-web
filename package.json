@@ -8,9 +8,10 @@
   "scripts": {
     "dev": "vinext dev",
     "build": "vinext build",
+    "build:wp": "npm run build && node scripts/prepare-wp.mjs",
     "start": "vinext start",
     "test": "npm run build && node --test tests/rendered-html.test.mjs",
-    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
+    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next --ignore-pattern public_html",
     "db:generate": "drizzle-kit generate"
   },
   "dependencies": {
