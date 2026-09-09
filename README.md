@@ -87,7 +87,10 @@ or enforce explicit server-side membership or allowlist checks.
 Use SIWC for account pages, user-specific dashboards, saved records, and write
 actions tied to the current ChatGPT user. Leave public content anonymous.
 
-## Useful Commands
+## HostAtom WP Plus deployment
+
+For the static deployment workflow, branch rules, webhook notes, Document Root, permissions, and troubleshooting, see [`HOSTATOM_DEPLOYMENT.md`](./HOSTATOM_DEPLOYMENT.md).
+
 
 - `npm run dev`: start local development
 - `npm run build`: verify the vinext build output
