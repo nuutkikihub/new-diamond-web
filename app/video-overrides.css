@@ -2,6 +2,10 @@
   overflow: hidden;
 }
 
+.videos-grid {
+  align-items: start;
+}
+
 .section-heading.center.videos-heading {
   width: 100%;
   max-width: none;

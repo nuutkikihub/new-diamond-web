@@ -171,7 +171,7 @@ export function ActivityGallery() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© 2023 บริษัท นิวไดมอนด์ สตาร์ช จำกัด</span>
+          <span>© {new Date().getFullYear()} บริษัท นิวไดมอนด์ สตาร์ช จำกัด</span>
           <div className="footer-languages">
             <button type="button" onClick={() => { window.location.href = "/en"; }}>ENGLISH</button>
             <button type="button" onClick={() => { window.location.href = "/th"; }}>ไทย</button>
