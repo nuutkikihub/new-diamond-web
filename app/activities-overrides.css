@@ -4,6 +4,56 @@
   font-size: 0.9em;
 }
 
+.activities-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.activities-languages {
+  position: static;
+  width: auto;
+  box-shadow: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.activities-languages a {
+  padding: 7px 9px;
+  color: #fff;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.activities-languages a[aria-current="page"],
+.activities-languages a:hover {
+  background: #0b8e59;
+}
+
+@media (max-width: 760px) {
+  .activities-header-actions {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    gap: 4px;
+  }
+
+  .activities-hero .activities-header {
+    gap: 10px;
+  }
+
+  .activities-languages a {
+    padding: 4px 7px;
+    font-size: 11px;
+  }
+}
+
 .activities-page {
   min-height: 100vh;
   color: #06291f;
@@ -305,7 +355,7 @@
 
 .activities-gallery button:hover img,
 .activities-gallery button:focus-visible img {
-  filter: brightness(0.78);
+  filter: saturate(1.18) contrast(1.04) brightness(1.06);
   transform: scale(1.045);
 }
 
@@ -1102,7 +1152,7 @@
   .activities-hero .activities-intro-copy h1 {
     max-width: 100%;
     margin: 0 auto 3px;
-    font-size: clamp(30px, 2.6vw, 42px);
+    font-size: clamp(21px, 1.82vw, 29.4px);
     line-height: 1;
   }
 
@@ -1129,4 +1179,17 @@
   .activities-hero .activities-signature span {
     font-size: 11.5px;
   }
+}
+
+@media (max-width: 760px) {
+  .activities-hero .activities-intro-copy h1 {
+    font-size: clamp(31.5px, 3.08vw, 47.6px);
+  }
+}
+
+/* Keep activity photos vivid in thumbnails, slides, and enlarged views. */
+.activities-gallery img,
+.activities-hero-slide img,
+.activity-modal img {
+  filter: saturate(1.18) contrast(1.04) brightness(1.03);
 }

@@ -33,10 +33,10 @@ jobs:
           GITHUB_PAGES: "true"
       - name: Verify exported pages and prepare directory URLs
         run: |
-          for page in index.html th.html en.html zh.html activities.html; do
+          for page in index.html th.html en.html zh.html activities.html th/activities.html en/activities.html zh/activities.html; do
             test -s "dist/client/$page" || exit 1
           done
-          for route in th en zh activities; do
+          for route in th en zh activities th/activities en/activities zh/activities; do
             mkdir -p "dist/client/$route"
             cp "dist/client/$route.html" "dist/client/$route/index.html"
           done
