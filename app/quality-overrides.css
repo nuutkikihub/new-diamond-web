@@ -10,16 +10,16 @@
 }
 
 .certificate-logo-row {
-  width: 82%;
+  width: 88%;
   margin: 5px auto 0;
   display: flex;
   align-items: center;
-  gap: 4%;
+  gap: 5%;
 }
 
 .certificate-standards-crop {
   position: relative;
-  width: 75%;
+  width: 70%;
   aspect-ratio: 790 / 190;
   overflow: hidden;
   flex-shrink: 0;
@@ -35,7 +35,8 @@
 
 .certificate-co2 {
   display: block;
-  width: 21%;
+  width: 25%;
+  flex-shrink: 0;
   height: auto;
   object-fit: contain;
 }
