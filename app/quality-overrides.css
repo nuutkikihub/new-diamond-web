@@ -3,6 +3,43 @@
   overflow: hidden;
 }
 
+.certificate-heading {
+  width: 100%;
+  aspect-ratio: 1353 / 145;
+  background: url("/images/certificates.png") center top / 100% auto no-repeat;
+}
+
+.certificate-logo-row {
+  width: 82%;
+  margin: 5px auto 0;
+  display: flex;
+  align-items: center;
+  gap: 4%;
+}
+
+.certificate-standards-crop {
+  position: relative;
+  width: 75%;
+  aspect-ratio: 790 / 190;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.certificate-standards {
+  position: absolute;
+  width: 171.27%;
+  max-width: none;
+  left: -34.18%;
+  top: -80.53%;
+}
+
+.certificate-co2 {
+  display: block;
+  width: 21%;
+  height: auto;
+  object-fit: contain;
+}
+
 .export-visual::before {
   content: "";
   position: absolute;
